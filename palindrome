@@ -1,0 +1,29 @@
+//Given an integer x, return true if x is a palindrome, and false otherwise.
+
+import java.util.Scanner;
+
+class Solution {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        boolean result = isPalindrome(n);
+        System.out.println(result);
+    }
+    public static boolean isPalindrome(int n) {
+        if (n < 0) {
+            return false;
+        }
+            String str = Integer.toString(n);
+            String rev = reverseString(str);
+            if (str.equals(rev)) {
+                return true;
+            } else {
+                return false;
+            }
+    }
+
+    public static String reverseString(String input) {
+        StringBuilder reversed = new StringBuilder(input);
+        return reversed.reverse().toString();
+    }
+}
