@@ -1,0 +1,38 @@
+//You are required to input the size of the matrix then the elements of matrix.
+//You have to divide the main matrix in two sub matrices (even and odd) in such a way that element at 0 index will be considered as even and element at 1st index will be considered as odd and so on. 
+//You have sort the even and odd matrices in ascending order then print the sum of second largest number from both the matrices
+
+/* package whatever; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Main
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+	 Scanner sc=new Scanner(System.in);
+     int n=sc.nextInt();
+     int[] arr=new int[n];
+     for(int i=0;i<n;i++){
+         arr[i]=sc.nextInt();
+     }
+     ArrayList<Integer> even=new <Integer>ArrayList();
+    ArrayList<Integer> odd=new <Integer>ArrayList();
+     for(int i=0;i<n;i++){
+         if(i%2==0){
+            even.add(arr[i]);
+
+         }else{
+             odd.add(arr[i]);
+         }
+     }
+         Collections.sort(even);
+         Collections.sort(odd);
+         int a=even.get(even.size()-2);
+         int b=odd.get(odd.size()-2);
+         System.out.println(a+b);
+     }
+	}
