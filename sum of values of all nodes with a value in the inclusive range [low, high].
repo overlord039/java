@@ -1,0 +1,29 @@
+Given the root node of a binary search tree and two integers low and high, return the sum of values of all nodes with a value in the inclusive range [low, high].
+// You are using Java
+import java.util.*;
+class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int[] arr=new int[n];
+        for(int i=0;i<n;i++){
+            if(sc.hasNextInt()){
+            arr[i]=sc.nextInt();
+        }else{
+            sc.next();
+            arr[i]=Integer.MIN_VALUE;
+        }
+        }
+        int[] a=new int[2];
+        for(int i=0;i<2;i++){
+            a[i]=sc.nextInt();
+        }
+        int sum=0;
+        for(int i=0;i<n;i++){
+                if(arr[i]>=a[0] && arr[i]<=a[1] && arr[i]!=Integer.MIN_VALUE){
+                    sum+=arr[i];
+                }
+            }
+            System.out.print(sum);
+    }
+}
